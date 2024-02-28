@@ -1,0 +1,36 @@
+<%- include("./partials/navbar.ejs") %>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1561.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="/css/cost.css">
+</head>
+<body>
+   
+    <h1 class="title is-1">Cost Analysis</h1>
+   
+
+    <form>
+        <select id="startDate">
+          <option value="1">1 month</option>
+          <option value="2023-08-01" selected="selected">6 months</option>
+          <option value="3">3 months</option>
+        </select>
+        <select id="endDate">
+            <option value="4">test1</option>
+            <option value="2024-01-31" selected="selected">test2</option>
+            <option value="5">test3</option>
+          </select>
+          <button id="changeDate">Go</button>
+      </form>
+    
+
+
+      
+      <script src="/js/cost/services.js"></script>
+      <script src="/js/cost/test.js"></script>
+    <script src="/js/cost/costec2.js"></script>
+    
+    <!-- <script src="/js/cost/costcw.js"></script> -->
+    <!-- <script src="/js/cost/costtax.js"></script> -->
+    
+</body>
+</html>
