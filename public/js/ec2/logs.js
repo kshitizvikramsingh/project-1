@@ -1,7 +1,6 @@
-AWS.config.update({ 
-    region: "us-east-1",
- accessKeyId:"AKIAURBFABFUMLS7W7FW",
-secretAccessKey:"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"});
+AWS.config.region="us-east-1"
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'us-east-1:940d3945-8a8f-4c11-9b86-ac6351c3ee26',RoleArn:"arn:aws:iam::311462725992:role/service-role/trustRoleInsightsApp"})
+
 
 var cloudwatchlogs = new AWS.CloudWatchLogs();
 

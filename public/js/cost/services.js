@@ -74,7 +74,7 @@ var params = {
           
           
               let h1=document.createElement("h1")
-              h1.innerText="Cost in last 6 months by "+services
+              h1.innerText="Cost in last 6 months by "
               h1.style.fontWeight=600
               h1.className="title is-3"
               document.body.append(h1)
@@ -123,16 +123,12 @@ var params = {
               canvas.style.textAlign="center"
               chartDiv.appendChild(canvas)
               const ctx = document.getElementById('myChart');
-          
+          console.log(cpu)
               new Chart(ctx, {
                 
                 data: {
                   labels: periodStart,
-                  datasets: [{
-                    type:"bar",
-                    label:"test",
-                    data: chartData
-                  },
+                  datasets: [
                   {
                     type:"bar",
                     label: 'Cost in last 6 months by EC2',
@@ -162,7 +158,7 @@ var params = {
               });
             } ;           // successful response
           });
-        console.log("services from service script: "+services[0]) 
+        //console.log("services from service script: "+services[0]) 
         
         
           }        // successful response
