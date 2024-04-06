@@ -7,7 +7,7 @@ endTime = new Date()
 console.log(endTime)
 const yesterday = new Date(new Date().setDate(new Date().getDate() - 186));  
 console.log(yesterday)
-var params = {
+var params1 = {
     EndTime: endTime, /* required */
     MetricName: 'CPUUtilization', /* required */
     Namespace: 'AWS/EC2', /* required */
@@ -25,7 +25,7 @@ var params = {
       /* more items */
     ]
   };
-  cloudwatch.getMetricStatistics(params, function(err, data) {
+  cloudwatch.getMetricStatistics(params1, function(err, data) {
     if (err) console.log(err, err.stack); // an error occurred
     else  
     {
@@ -37,36 +37,36 @@ var params = {
         
     }         
       period.sort()  
-    let chartDiv=document.createElement("div")
-              document.body.appendChild(chartDiv)
-              let canvas=document.createElement("canvas")
-              canvas.id="myChart1"
-              canvas.style.textAlign="center"
-              chartDiv.appendChild(canvas)
-              const ctx = document.getElementById('myChart1');
-         console.log(cpu)
-          //console.log(period)
-              new Chart(ctx, {
+    // let chartDiv=document.createElement("div")
+    //           document.body.appendChild(chartDiv)
+    //           let canvas=document.createElement("canvas")
+    //           canvas.id="myChart1"
+    //           canvas.style.textAlign="center"
+    //           chartDiv.appendChild(canvas)
+    //           const ctx = document.getElementById('myChart1');
+    //      console.log(cpu)
+    //       //console.log(period)
+    //           new Chart(ctx, {
                 
-                data: {
-                  labels:period,
-                  datasets: [{
-                    type:"bar",
-                    label:"CPU Utilization in last 6 months",
-                    data: cpu
-                  }]
-                },
-                options: {
-                  scales: {
-                    y: {
-                      beginAtZero: true
-                    }
-                  },
-                  layout:{
-                    padding:20
-                  }
-                }
-              });
+    //             data: {
+    //               labels:period,
+    //               datasets: [{
+    //                 type:"bar",
+    //                 label:"CPU Utilization in last 6 months",
+    //                 data: cpu
+    //               }]
+    //             },
+    //             options: {
+    //               scales: {
+    //                 y: {
+    //                   beginAtZero: true
+    //                 }
+    //               },
+    //               layout:{
+    //                 padding:20
+    //               }
+    //             }
+    //           });
     
     
     

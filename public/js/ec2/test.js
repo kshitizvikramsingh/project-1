@@ -27,6 +27,7 @@ ec2.describeInstances(params, function (err, data) {
 
     let div=document.createElement("div")
 div.className="card"
+div.id="card"
 document.body.appendChild(div)
         let image=document.createElement("img")
         image.src="/img/ec2.png"
@@ -36,6 +37,13 @@ document.body.appendChild(div)
         title.style.fontWeight=600
         div.appendChild(title)
 
+        if(typeof(div)!==null){
+          document.querySelector(".preload").style.display="none"
+          
+      }
+      else{
+          document.querySelector(".preload").style.display="block"
+      }
 
     div.addEventListener("click",()=>{
       let notification=document.createElement("div")
@@ -66,6 +74,10 @@ document.body.appendChild(div)
           instanceState.style.fontWeight=600
           notification.appendChild(instanceState)
 
+          console.log(typeof(div))
+           
+
+
           cancel.addEventListener("click",()=>{
             notification.removeChild(instanceId)
             notification.removeChild(instanceState)
@@ -83,7 +95,7 @@ document.body.appendChild(div)
   }
 })
     
-  
+ 
 
 console.log(instances)
 var params2 = {

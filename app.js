@@ -28,7 +28,7 @@ app.set("views",views)
 
 
 
-app.get("/login",(req,res)=>{
+app.get("/",(req,res)=>{
     res.render("login.ejs")
 })
 app.post("/login",async(req,res)=>{

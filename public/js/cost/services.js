@@ -110,6 +110,30 @@ var params = {
                  
                   
               }
+
+cloudwatch.getMetricStatistics(params1, function(err, data) {
+    if (err) console.log(err, err.stack); // an error occurred
+    else  
+    {
+        console.log(data);
+        for(let i=0;i<5;i++){
+            period[i]=data.Datapoints[i].Timestamp
+           cpu[i]= data.Datapoints[i].Average
+        }
+        
+    }         
+      period.sort()  
+          //console.log(period)
+              
+    
+    
+    
+    // successful response
+  });
+
+
+
+
               console.log("periodStart"+periodStart)
               let p2=document.createElement("p")
               p2.innerText="Total cost is: "+"₹"+sum
@@ -128,7 +152,12 @@ var params = {
                 
                 data: {
                   labels: periodStart,
-                  datasets: [
+                  datasets: [{
+                    type:"bar",
+                    label:"CPU Utilization in last 6 months",
+                    data: cpu
+                  },
+
                   {
                     type:"bar",
                     label: 'Cost in last 6 months by EC2',
