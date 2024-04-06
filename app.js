@@ -109,6 +109,6 @@ app.post("/logout",(req,res)=>{
 
 
 
-app.listen("80",()=>{
-    console.log("App is up on port 80")
+app.listen("3000",()=>{
+    console.log("App is up on port 3000")
 })
