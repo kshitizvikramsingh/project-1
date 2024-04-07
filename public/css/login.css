@@ -6,3 +6,14 @@ body{
     border-style: solid;
     border-width: 2px;
 }
+
+
+#company{
+    margin: 20 px;
+}
+
+.title{
+    background: linear-gradient(to right, #f32170, #ff6b08,#cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
