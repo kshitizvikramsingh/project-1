@@ -97,6 +97,28 @@ app.get("/cost",(req,res)=>{
         res.redirect("/login")
     }
 })
+app.get("/iam",(req,res)=>{
+
+    if(req.session.user_id){
+        res.render("iam.ejs")
+    }
+    else{
+        res.redirect("/login")
+    }
+})
+
+// app.post("/iam",(req,res)=>{
+    
+//     if(req.session.user_id){
+//         res.render("iam.ejs")
+//         console.log(req.body.userName)
+//     }
+//     else{
+//         res.redirect("/login")
+//     }
+// })
+
+
 app.post("/logout",(req,res)=>{
     req.session.destroy()
     res.redirect("/")

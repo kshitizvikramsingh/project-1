@@ -1,0 +1,51 @@
+<%- include("./partials/navbar.ejs") %>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1561.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="/css/cost.css">
+</head>
+<body>
+   
+    <h1 class="title is-1">IAM (Identity and Access Management)</h1>
+    
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <h2>List IAM Users</h2>
+            <input type="submit" class="btn btn-primary" id="listUsers">
+        </div>
+    </div>
+</div>
+    <div class="row">
+    <div class="col">
+        <div class="card">
+            <h2>Create a User</h2>
+            <form action="/iam" method="get">
+                <label name="userName" >Enter the name of the user to create an IAM user in AWS:</label>
+                <input name="userName" id="input">
+                <input class="btn btn-success"type="submit" id="createUser">
+            </form>
+            
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <h2>Delete a User</h2>
+            <label name="userName" >Enter the name of the user to delete an IAM user in AWS:</label>
+            <input name="userName" id="inputDelete">
+            <input class="btn btn-danger"type="submit" id="deleteUser">
+        </div>
+    </div>
+</div>
+
+    
+
+    <script src="/js/iam/createUser.js"></script>
+    <script src="/js/iam/deleteUser.js"></script>
+    <script src="/js/iam/listUsers.js"></script>
+    <!-- <script src="/js/cost/costcw.js"></script> -->
+    <!-- <script src="/js/cost/costtax.js"></script> -->
+    
+</body>
+</html>
